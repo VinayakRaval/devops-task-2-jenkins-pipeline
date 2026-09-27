@@ -1,0 +1,773 @@
+/* =========================================================
+   LEADERSHIP / ENGAGEMENT SECTION
+   ========================================================= */
+
+.leadership {
+  position: relative;
+
+  width: 100%;
+
+  padding: 150px 0 140px;
+
+  background: #090909;
+
+  color: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+   ========================================================= */
+
+.leadership::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  left: 50%;
+  top: 35%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 9, 40, 0.09) 0%,
+      rgba(255, 9, 40, 0.03) 35%,
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+.leadership::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -120px;
+  bottom: 100px;
+
+  border: 1px solid rgba(255, 9, 40, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.leadership-heading {
+  position: relative;
+
+  z-index: 5;
+}
+
+.leadership-heading h2 {
+  margin-top: 20px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  font-weight: 600;
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+}
+
+.leadership-heading p {
+  max-width: 480px;
+
+  margin-top: 22px;
+
+  color: #888888;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   TIMELINE CONTAINER
+   ========================================================= */
+
+.leadership-timeline {
+  position: relative;
+
+  max-width: 1050px;
+
+  min-height: 1100px;
+
+  margin: 90px auto 0;
+}
+
+
+/* =========================================================
+   TIMELINE TRACK
+   ========================================================= */
+
+.timeline-track {
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background: #222222;
+
+  border-radius: 10px;
+
+  z-index: 1;
+}
+
+
+/* =========================================================
+   ANIMATED TIMELINE PROGRESS
+   ========================================================= */
+
+.timeline-progress {
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      to bottom,
+      #ff0928 0%,
+      #ff0928 75%,
+      rgba(255, 9, 40, 0.3) 100%
+    );
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 0 8px rgba(255, 9, 40, 0.5),
+    0 0 20px rgba(255, 9, 40, 0.2);
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   TIMELINE ITEMS
+   ========================================================= */
+
+.leadership-item {
+  position: absolute;
+
+  width: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   ITEM POSITIONS
+   ========================================================= */
+
+.leadership-item-1 {
+  top: 0;
+}
+
+.leadership-item-2 {
+  top: 270px;
+}
+
+.leadership-item-3 {
+  top: 540px;
+}
+
+.leadership-item-4 {
+  top: 810px;
+}
+
+
+/* =========================================================
+   LEFT / RIGHT
+   ========================================================= */
+
+.timeline-left {
+  left: 0;
+
+  justify-content: flex-end;
+
+  padding-right: 65px;
+}
+
+.timeline-right {
+  left: 50%;
+
+  justify-content: flex-start;
+
+  padding-left: 65px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.leadership-card {
+  position: relative;
+
+  width: 380px;
+
+  min-height: 220px;
+
+  padding: 27px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #171717,
+      #101010
+    );
+
+  border: 1px solid #272727;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.3);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.leadership-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -45px;
+  top: -45px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(255, 9, 40, 0.08);
+
+  pointer-events: none;
+}
+
+.leadership-card:hover {
+  border-color: rgba(255, 9, 40, 0.5);
+
+  background:
+    linear-gradient(
+      145deg,
+      #191919,
+      #101010
+    );
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 9, 40, 0.07);
+}
+
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.leadership-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.leadership-number {
+  color: #303030;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 35px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.leadership-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ff0928;
+
+  background:
+    rgba(255, 9, 40, 0.08);
+
+  border:
+    1px solid rgba(255, 9, 40, 0.15);
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 0 20px rgba(255, 9, 40, 0.05);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.leadership-card:hover .leadership-icon {
+  background: #ff0928;
+
+  border-color: #ff0928;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.leadership-card h3 {
+  margin-top: 27px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 21px;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.5px;
+}
+
+.leadership-card p {
+  max-width: 300px;
+
+  margin-top: 10px;
+
+  color: #858585;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CARD BOTTOM LINE
+   ========================================================= */
+
+.leadership-card-line {
+  position: absolute;
+
+  left: 27px;
+  right: 27px;
+
+  bottom: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.leadership-card-line span {
+  display: block;
+
+  width: 45px;
+  height: 2px;
+
+  background: #ff0928;
+
+  border-radius: 5px;
+}
+
+.leadership-card-line small {
+  color: #444444;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   TIMELINE NODE
+   ========================================================= */
+
+.timeline-node {
+  position: absolute;
+
+  top: 50%;
+
+  width: 28px;
+  height: 28px;
+
+  display: grid;
+
+  place-items: center;
+
+  transform: translateY(-50%);
+
+  background: #090909;
+
+  border: 2px solid #ff0928;
+
+  border-radius: 50%;
+
+  z-index: 10;
+
+  box-shadow:
+    0 0 0 6px rgba(255, 9, 40, 0.05),
+    0 0 20px rgba(255, 9, 40, 0.2);
+}
+
+.timeline-left .timeline-node {
+  right: -14px;
+}
+
+.timeline-right .timeline-node {
+  left: -14px;
+}
+
+
+/* =========================================================
+   NODE INNER DOT
+   ========================================================= */
+
+.timeline-node-inner {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #ff0928;
+
+  box-shadow:
+    0 0 8px rgba(255, 9, 40, 0.8);
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+   ========================================================= */
+
+.leadership-bottom {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+
+  color: #555555;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-align: center;
+}
+
+.bottom-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff0928;
+
+  box-shadow:
+    0 0 10px rgba(255, 9, 40, 0.65);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .leadership-timeline {
+    max-width: 900px;
+  }
+
+  .leadership-card {
+    width: 330px;
+  }
+
+  .timeline-left {
+    padding-right: 55px;
+  }
+
+  .timeline-right {
+    padding-left: 55px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .leadership {
+    padding: 110px 0 100px;
+  }
+
+  .leadership-heading h2 {
+    letter-spacing: -2px;
+  }
+
+  .leadership-timeline {
+    min-height: auto;
+
+    margin-top: 60px;
+
+    padding-left: 35px;
+  }
+
+  /* Mobile vertical line */
+
+  .timeline-track,
+  .timeline-progress {
+    left: 10px;
+
+    transform: none;
+  }
+
+  .leadership-item {
+    position: relative;
+
+    top: auto !important;
+    left: auto !important;
+
+    width: 100%;
+
+    margin-bottom: 25px;
+
+    padding: 0 !important;
+
+    justify-content: flex-start;
+  }
+
+  .leadership-card {
+    width: 100%;
+
+    min-height: 205px;
+
+    padding: 23px;
+
+    border-radius: 17px;
+  }
+
+  .leadership-card h3 {
+    font-size: 19px;
+  }
+
+  .leadership-card p {
+    max-width: 100%;
+
+    font-size: 10px;
+  }
+
+  /* Mobile node */
+
+  .timeline-node,
+  .timeline-left .timeline-node,
+  .timeline-right .timeline-node {
+    left: -39px;
+    right: auto;
+
+    top: 50%;
+  }
+
+  .leadership-bottom {
+    margin-top: 20px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+  .leadership {
+    padding: 90px 0 85px;
+  }
+
+  .leadership-heading h2 {
+    font-size: 40px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .leadership-heading p {
+    font-size: 11px;
+  }
+
+  .leadership-timeline {
+    margin-top: 50px;
+
+    padding-left: 29px;
+  }
+
+  .timeline-track,
+  .timeline-progress {
+    left: 7px;
+  }
+
+  .leadership-item {
+    margin-bottom: 20px;
+  }
+
+  .leadership-card {
+    min-height: 195px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+  }
+
+  .leadership-number {
+    font-size: 30px;
+  }
+
+  .leadership-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+  }
+
+  .leadership-card h3 {
+    margin-top: 23px;
+
+    font-size: 17px;
+  }
+
+  .leadership-card p {
+    font-size: 9px;
+
+    line-height: 1.65;
+  }
+
+  .leadership-card-line {
+    left: 20px;
+    right: 20px;
+
+    bottom: 16px;
+  }
+
+  .leadership-card-line span {
+    width: 35px;
+  }
+
+  .timeline-node,
+  .timeline-left .timeline-node,
+  .timeline-right .timeline-node {
+    left: -35px;
+
+    width: 24px;
+    height: 24px;
+  }
+
+  .timeline-node-inner {
+    width: 6px;
+    height: 6px;
+  }
+
+  .leadership-bottom {
+    font-size: 7px;
+
+    letter-spacing: 1.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .leadership-card,
+  .leadership-icon,
+  .timeline-node-inner {
+    transition: none;
+    animation: none;
+  }
+}

@@ -1,0 +1,377 @@
+/* =========================================================
+   CERTIFICATIONS / LEARNING SECTION
+   ========================================================= */
+
+.certifications {
+  position: relative;
+
+  padding: 130px 0;
+
+  background: var(--red);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+   ========================================================= */
+
+.certifications::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -150px;
+  top: -120px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.certifications::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: -300px;
+  bottom: -260px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.certifications .section-container {
+  position: relative;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.certifications .center-heading {
+  position: relative;
+
+  margin-bottom: 60px;
+}
+
+.certifications .center-heading h2 {
+  color: #ffffff;
+}
+
+.certifications .center-heading h2 strong {
+  font-weight: 800;
+}
+
+.certifications .center-heading p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   LEARNING GRID
+   ========================================================= */
+
+.learning-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   LEARNING CARD
+   ========================================================= */
+
+.learning-card {
+  position: relative;
+
+  min-height: 245px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, 0.16);
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.learning-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  right: -45px;
+  bottom: -45px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.learning-card:hover {
+  background: rgba(0, 0, 0, 0.23);
+
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.learning-card:hover::before {
+  transform: scale(1.5);
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.learning-icon {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin-bottom: 30px;
+
+  background: #090909;
+
+  color: #ffffff;
+
+  border-radius: 11px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.learning-card:hover .learning-icon {
+  transform: translateY(-3px);
+
+  background: #ffffff;
+
+  color: #ff0928;
+}
+
+
+/* =========================================================
+   TOP LINE
+   ========================================================= */
+
+.learning-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.learning-number {
+  color: rgba(255, 255, 255, 0.6);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.learning-status {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.learning-card h3 {
+  margin-bottom: 10px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.learning-card p {
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.learning-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 45px;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.5px;
+}
+
+.learning-footer svg {
+  color: #ffffff;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .learning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .certifications {
+    padding: 100px 0;
+  }
+
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-card {
+    min-height: auto;
+
+    padding: 22px;
+  }
+
+  .learning-icon {
+    margin-bottom: 24px;
+  }
+
+  .learning-footer {
+    text-align: center;
+
+    line-height: 1.5;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .learning-card {
+    padding: 20px;
+  }
+
+  .learning-card h3 {
+    font-size: 18px;
+  }
+
+  .learning-card p {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .learning-card,
+  .learning-card::before,
+  .learning-icon {
+    transition: none;
+  }
+}

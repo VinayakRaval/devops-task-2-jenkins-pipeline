@@ -1,0 +1,94 @@
+/* Global styles, reset, variables and shared layout helpers */
+
+:root {
+  --red: #ff0928;
+  --red-dark: #d90722;
+  --black: #090909;
+  --black-2: #111111;
+  --white: #ffffff;
+  --gray: #a8a8a8;
+  --card: #171717;
+  --border: rgba(255, 255, 255, 0.1);
+
+  font-family: "Inter", sans-serif;
+
+  color: var(--white);
+  background: var(--black);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section-container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+.section-tag {
+  display: inline-block;
+
+  padding: 6px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(0,0,0,0.2);
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 55px;
+}
+
+.center-heading {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  margin-bottom: 55px;
+}

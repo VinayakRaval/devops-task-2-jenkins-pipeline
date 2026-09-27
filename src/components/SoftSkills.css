@@ -1,0 +1,570 @@
+/* =========================================================
+   SOFT SKILLS
+========================================================= */
+
+.soft-skills {
+  position: relative;
+
+  width: 100%;
+
+  padding: 150px 0 140px;
+
+  background: #ff0928;
+
+  color: #000000;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.soft-skills::before {
+  content: "";
+
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  top: 70px;
+  right: -240px;
+
+  border: 1px solid rgba(0, 0, 0, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.soft-skills::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  left: -180px;
+  bottom: 40px;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.soft-skills-heading {
+  position: relative;
+
+  z-index: 2;
+}
+
+.soft-skills-heading h2 {
+  margin-top: 20px;
+
+  color: #090909;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(42px, 6vw, 72px);
+
+  line-height: 0.9;
+
+  letter-spacing: -4px;
+
+  font-weight: 700;
+}
+
+.soft-skills-heading p {
+  max-width: 500px;
+
+  margin-top: 20px;
+
+  color: rgba(0, 0, 0, 0.65);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.soft-skills-grid {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 70px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.soft-skill-card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 27px;
+
+  background: #111111;
+
+  color: #ffffff;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.soft-skill-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  top: -65px;
+  right: -65px;
+
+  border: 1px solid
+    rgba(255, 9, 40, 0.12);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.3s ease;
+}
+
+.soft-skill-card:hover {
+  border-color:
+    rgba(255, 9, 40, 0.45);
+
+  box-shadow:
+    0 25px 60px
+    rgba(0, 0, 0, 0.25);
+}
+
+.soft-skill-card:hover::before {
+  transform: scale(1.15);
+
+  border-color:
+    rgba(255, 9, 40, 0.2);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.soft-skill-top {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+.soft-skill-number {
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 35px;
+
+  line-height: 1;
+
+  font-weight: 700;
+
+  color: #303030;
+
+  transition:
+    color 0.3s ease;
+}
+
+.soft-skill-card:hover .soft-skill-number {
+  color: #3a3a3a;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.soft-skill-icon {
+  width: 44px;
+  height: 44px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ff0928;
+
+  background:
+    rgba(255, 9, 40, 0.08);
+
+  border: 1px solid
+    rgba(255, 9, 40, 0.15);
+
+  border-radius: 12px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.soft-skill-card:hover .soft-skill-icon {
+  color: #ffffff;
+
+  background: #ff0928;
+
+  border-color: #ff0928;
+
+  transform:
+    translateY(-2px)
+    rotate(2deg);
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.soft-skill-card h3 {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 35px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.2px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.soft-skill-card p {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 230px;
+
+  margin-top: 13px;
+
+  color: #858585;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CARD BOTTOM LINE
+========================================================= */
+
+.soft-skill-line {
+  position: absolute;
+
+  left: 27px;
+  right: 27px;
+  bottom: 20px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+/* RED LINE */
+
+.soft-skill-line span {
+  width: 45px;
+  height: 2px;
+
+  background: #ff0928;
+
+  border-radius: 5px;
+
+  transition:
+    width 0.3s ease;
+}
+
+.soft-skill-card:hover
+.soft-skill-line span {
+  width: 65px;
+}
+
+
+/* CARD INDEX */
+
+.soft-skill-line small {
+  color: #444444;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 7px;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+========================================================= */
+
+.soft-skills-bottom {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 45px;
+
+  color: rgba(0, 0, 0, 0.55);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-align: center;
+}
+
+.soft-skills-bottom-dot {
+  width: 6px;
+  height: 6px;
+
+  background: #000000;
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .soft-skills {
+    padding: 125px 0 115px;
+  }
+
+  .soft-skills-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 16px;
+
+    margin-top: 55px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .soft-skills {
+    padding: 105px 0 90px;
+  }
+
+  .soft-skills::before {
+    width: 350px;
+    height: 350px;
+
+    right: -200px;
+  }
+
+  .soft-skills::after {
+    width: 230px;
+    height: 230px;
+
+    left: -140px;
+  }
+
+  .soft-skills-heading h2 {
+    font-size: 42px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .soft-skills-heading p {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .soft-skills-grid {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+
+    margin-top: 45px;
+  }
+
+  .soft-skill-card {
+    min-height: 270px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+  }
+
+  .soft-skill-card h3 {
+    margin-top: 30px;
+
+    font-size: 15px;
+  }
+
+  .soft-skill-card p {
+    max-width: 100%;
+
+    font-size: 10px;
+  }
+
+  .soft-skill-line {
+    left: 25px;
+    right: 25px;
+  }
+
+  .soft-skills-bottom {
+    margin-top: 38px;
+
+    padding: 0 15px;
+
+    font-size: 7px;
+
+    line-height: 1.6;
+
+    letter-spacing: 1.5px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .soft-skills {
+    padding: 90px 0 80px;
+  }
+
+  .soft-skill-card {
+    min-height: 260px;
+
+    padding: 22px;
+  }
+
+  .soft-skill-number {
+    font-size: 31px;
+  }
+
+  .soft-skill-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .soft-skill-line {
+    left: 22px;
+    right: 22px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .soft-skill-card,
+  .soft-skill-card::before,
+  .soft-skill-icon,
+  .soft-skill-line span {
+    transition: none;
+  }
+}

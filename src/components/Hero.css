@@ -1,0 +1,765 @@
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 780px;
+
+  background: var(--red);
+
+  color: #ffffff;
+
+  border-radius: 0 0 42px 42px;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BOTTOM CURVE
+   ========================================================= */
+
+.hero::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -55px;
+
+  width: 100%;
+  height: 100px;
+
+  background: var(--black);
+
+  border-radius: 50% 50% 0 0;
+
+  pointer-events: none;
+
+  z-index: 3;
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+   ========================================================= */
+
+.hero::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -250px;
+  top: 80px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(1120px, 90%);
+
+  min-height: 700px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 30px;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-text {
+  position: relative;
+
+  z-index: 5;
+
+  padding-top: 50px;
+}
+
+
+/* =========================================================
+   SMALL LABEL
+   ========================================================= */
+
+.small-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  line-height: 1;
+
+  text-transform: uppercase;
+}
+
+.small-label::before {
+  content: "";
+
+  width: 24px;
+  height: 1px;
+
+  margin-right: 10px;
+
+  background: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.hero h1 {
+  margin-top: 20px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(50px, 7vw, 88px);
+
+  font-weight: 500;
+
+  line-height: 0.9;
+
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  color: #ffffff;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.hero p {
+  max-width: 460px;
+
+  margin-top: 26px;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   BUTTON CONTAINER
+   ========================================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+
+/* =========================================================
+   COMMON BUTTON STYLES
+   ========================================================= */
+
+.primary-button,
+.secondary-button,
+.resume-button {
+  min-height: 42px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border-radius: 30px;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+  background: #ffffff;
+
+  border: 1px solid #ffffff;
+
+  color: #090909;
+}
+
+.primary-button:hover {
+  background: #090909;
+
+  border-color: #090909;
+
+  color: #ffffff;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.primary-button svg {
+  transition: transform 0.25s ease;
+}
+
+.primary-button:hover svg {
+  transform: translate(2px, -2px);
+}
+
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.secondary-button {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  color: #ffffff;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.12);
+
+  border-color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   RESUME BUTTON
+   ========================================================= */
+
+.resume-button {
+  background: transparent;
+
+  border: 1px solid rgba(255, 255, 255, 0.55);
+
+  color: #ffffff;
+}
+
+.resume-button:hover {
+  background: #ffffff;
+
+  border-color: #ffffff;
+
+  color: #090909;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.resume-button svg {
+  transition: transform 0.25s ease;
+}
+
+.resume-button:hover svg {
+  transform: translateY(2px);
+}
+
+
+/* =========================================================
+   HERO IMAGE AREA
+   ========================================================= */
+
+.hero-image {
+  position: relative;
+
+  height: 620px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE FRAME
+   ========================================================= */
+
+.image-frame {
+  position: relative;
+
+  width: 470px;
+  height: 610px;
+
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.08);
+
+  border-radius: 40px 40px 0 0;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.16);
+}
+
+.image-frame::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 70%,
+      rgba(0, 0, 0, 0.12)
+    );
+
+  pointer-events: none;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.image-frame:hover img {
+  transform: scale(1.025);
+}
+
+
+/* =========================================================
+   FLOATING TERMINAL
+   ========================================================= */
+
+.floating-terminal {
+  position: absolute;
+
+  right: 10px;
+  bottom: 90px;
+
+  min-height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 0 12px 0 15px;
+
+  background: rgba(10, 10, 10, 0.88);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2px;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.floating-terminal::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #ff0928;
+
+  box-shadow:
+    0 0 8px rgba(255, 9, 40, 0.7);
+}
+
+.terminal-play {
+  width: 22px;
+  height: 22px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background: #ff0928;
+
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .hero-content {
+    gap: 15px;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 72px);
+
+    letter-spacing: -4px;
+  }
+
+  .image-frame {
+    width: 400px;
+    height: 570px;
+  }
+
+  .hero-image {
+    height: 580px;
+  }
+
+  .floating-terminal {
+    right: 0;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+  .hero {
+    min-height: 850px;
+
+    border-radius: 0 0 32px 32px;
+  }
+
+  .hero-content {
+    width: min(620px, 90%);
+
+    min-height: auto;
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    padding-top: 120px;
+
+    text-align: center;
+  }
+
+  .hero-text {
+    padding-top: 0;
+  }
+
+  .small-label {
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(48px, 10vw, 68px);
+
+    letter-spacing: -4px;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 500px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    height: 400px;
+
+    align-items: flex-end;
+  }
+
+  .image-frame {
+    width: 300px;
+    height: 400px;
+
+    border-radius: 30px 30px 0 0;
+  }
+
+  .floating-terminal {
+    right: 0;
+
+    bottom: 45px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+  .hero {
+    min-height: 820px;
+  }
+
+  .hero-content {
+    width: 88%;
+
+    padding-top: 105px;
+
+    gap: 38px;
+  }
+
+  .small-label {
+    font-size: 7.5px;
+
+    letter-spacing: 1.5px;
+  }
+
+  .small-label::before {
+    width: 16px;
+
+    margin-right: 7px;
+  }
+
+  .hero h1 {
+    margin-top: 17px;
+
+    font-size: 43px;
+
+    line-height: 0.94;
+
+    letter-spacing: -3px;
+  }
+
+  .hero p {
+    margin-top: 21px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    margin-top: 24px;
+
+    gap: 8px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .resume-button {
+    min-height: 40px;
+
+    padding: 0 15px;
+
+    font-size: 9px;
+  }
+
+  .hero-image {
+    height: 330px;
+  }
+
+  .image-frame {
+    width: 245px;
+    height: 330px;
+
+    border-radius: 26px 26px 0 0;
+  }
+
+  .floating-terminal {
+    right: -4px;
+
+    bottom: 30px;
+
+    min-height: 37px;
+
+    padding: 0 9px 0 11px;
+
+    gap: 9px;
+
+    font-size: 7.5px;
+
+    border-radius: 9px;
+  }
+
+  .floating-terminal::before {
+    width: 5px;
+    height: 5px;
+  }
+
+  .terminal-play {
+    width: 19px;
+    height: 19px;
+  }
+
+  .hero::before {
+    width: 350px;
+    height: 350px;
+
+    right: -220px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 360px) {
+  .hero-content {
+    width: 90%;
+
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .hero-buttons {
+    gap: 7px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .resume-button {
+    padding: 0 12px;
+
+    font-size: 8px;
+  }
+
+  .image-frame {
+    width: 220px;
+    height: 300px;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .floating-terminal {
+    right: -2px;
+
+    bottom: 20px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.primary-button:focus-visible,
+.secondary-button:focus-visible,
+.resume-button:focus-visible {
+  outline: 2px solid #ffffff;
+
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero *,
+  .hero::before,
+  .hero::after,
+  .primary-button,
+  .secondary-button,
+  .resume-button,
+  .image-frame img {
+    transition: none;
+    animation: none;
+  }
+}

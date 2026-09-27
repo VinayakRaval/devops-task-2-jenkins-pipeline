@@ -1,0 +1,964 @@
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.projects {
+  position: relative;
+  width: 100%;
+  padding: 150px 0 140px;
+  background: #090909;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.projects::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  top: 180px;
+  right: -300px;
+  border: 1px solid rgba(255, 9, 40, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.projects::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: -210px;
+  bottom: 80px;
+  border: 1px solid rgba(255, 9, 40, 0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.projects-heading {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  gap: 60px;
+  margin-bottom: 70px;
+}
+
+.projects-heading h2 {
+  margin-top: 22px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 0.9;
+  letter-spacing: -4px;
+  font-weight: 500;
+}
+
+.projects-heading h2 strong {
+  font-weight: 700;
+}
+
+.projects-heading p {
+  max-width: 330px;
+  margin-bottom: 5px;
+
+  color: #777777;
+
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   PROJECT LIST
+========================================================= */
+
+.projects-list {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+========================================================= */
+
+.project-showcase {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+
+  min-height: 420px;
+
+  background: #111111;
+
+  border: 1px solid #242424;
+  border-radius: 24px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s ease;
+}
+
+.project-showcase:hover {
+  border-color: rgba(255, 9, 40, 0.45);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.32),
+    0 0 40px rgba(255, 9, 40, 0.04);
+}
+
+
+/* =========================================================
+   PROJECT VISUAL
+========================================================= */
+
+.project-visual {
+  position: relative;
+
+  min-height: 420px;
+  padding: 28px;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(255, 9, 40, 0.16),
+      transparent 48%
+    ),
+    #151515;
+
+  border-right: 1px solid #252525;
+
+  overflow: hidden;
+}
+
+.project-visual::before {
+  content: "";
+
+  position: absolute;
+  inset: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   VISUAL TOP
+========================================================= */
+
+.project-visual-top {
+  position: relative;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #777777;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.project-visual-top span:last-child {
+  color: #ff0928;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   VISUAL CENTER
+========================================================= */
+
+.project-visual-content {
+  position: absolute;
+
+  inset: 70px 30px 60px;
+
+  display: grid;
+  place-items: center;
+}
+
+
+/* =========================================================
+   LARGE PROJECT NUMBER
+========================================================= */
+
+.project-big-number {
+  position: absolute;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(130px, 18vw, 210px);
+  line-height: 1;
+  font-weight: 800;
+
+  color: rgba(255, 255, 255, 0.025);
+
+  user-select: none;
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   ORBIT
+========================================================= */
+
+.project-orbit {
+  position: absolute;
+
+  width: 210px;
+  height: 210px;
+
+  border: 1px solid rgba(255, 9, 40, 0.18);
+  border-radius: 50%;
+
+  animation: projectRotate 14s linear infinite;
+}
+
+.project-orbit::before {
+  content: "";
+
+  position: absolute;
+  inset: 28px;
+
+  border: 1px dashed rgba(255, 9, 40, 0.15);
+  border-radius: 50%;
+}
+
+.project-orbit::after {
+  content: "";
+
+  position: absolute;
+
+  width: 8px;
+  height: 8px;
+
+  top: -4px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  background: #ff0928;
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 15px rgba(255, 9, 40, 0.8);
+}
+
+.project-orbit-dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  right: 20px;
+  bottom: 28px;
+
+  background: #ffffff;
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CODE WINDOW
+========================================================= */
+
+.project-code-window {
+  position: relative;
+  z-index: 2;
+
+  width: 190px;
+  height: 125px;
+
+  padding: 15px;
+
+  background: #0b0b0b;
+
+  border: 1px solid #292929;
+  border-radius: 10px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.45);
+
+  transform: rotate(-4deg);
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.project-showcase:hover .project-code-window {
+  transform: rotate(0deg) scale(1.05);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.55),
+    0 0 25px rgba(255, 9, 40, 0.06);
+}
+
+
+/* =========================================================
+   CODE WINDOW HEADER
+========================================================= */
+
+.code-window-header {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-bottom: 15px;
+}
+
+.code-window-header span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #3b3b3b;
+}
+
+.code-window-header span:first-child {
+  background: #ff0928;
+}
+
+
+/* =========================================================
+   CODE LINES
+========================================================= */
+
+.code-lines {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.code-lines i {
+  display: block;
+
+  height: 3px;
+
+  background: #292929;
+
+  border-radius: 10px;
+}
+
+.code-lines i:nth-child(1) {
+  width: 72%;
+}
+
+.code-lines i:nth-child(2) {
+  width: 90%;
+}
+
+.code-lines i:nth-child(3) {
+  width: 58%;
+}
+
+.code-lines i:nth-child(4) {
+  width: 82%;
+}
+
+.code-lines i:nth-child(5) {
+  width: 45%;
+}
+
+
+/* =========================================================
+   VISUAL FOOTER
+========================================================= */
+
+.project-visual-footer {
+  position: absolute;
+  z-index: 3;
+
+  left: 28px;
+  right: 28px;
+  bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #777777;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project-visual-footer svg {
+  color: #ff0928;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.project-showcase:hover .project-visual-footer svg {
+  color: #ffffff;
+
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+========================================================= */
+
+.project-showcase-content {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 45px 45px 40px;
+}
+
+
+/* =========================================================
+   PROJECT META
+========================================================= */
+
+.project-meta {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: #666666;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.project-meta span:first-child {
+  color: #ff0928;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   PROJECT TITLE
+========================================================= */
+
+.project-showcase-content h3 {
+  margin-top: 20px;
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   PROJECT DESCRIPTION
+========================================================= */
+
+.project-description {
+  max-width: 520px;
+
+  margin-top: 22px;
+
+  color: #858585;
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   TECHNOLOGIES
+========================================================= */
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 25px;
+}
+
+.project-technologies span {
+  padding: 7px 10px;
+
+  color: #aaaaaa;
+  background: #181818;
+
+  border: 1px solid #292929;
+  border-radius: 20px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 600;
+
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.project-technologies span:hover {
+  color: #ffffff;
+
+  background: #1d1d1d;
+
+  border-color: rgba(255, 9, 40, 0.5);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PROJECT ACTIONS
+========================================================= */
+
+.project-actions {
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 32px;
+}
+
+
+/* =========================================================
+   PROJECT BUTTONS
+========================================================= */
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  min-height: 38px;
+
+  padding: 11px 16px;
+
+  border-radius: 30px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   PRIMARY PROJECT BUTTON
+========================================================= */
+
+.primary-project-link {
+  color: #ffffff;
+
+  background: #ff0928;
+
+  border: 1px solid #ff0928;
+
+  box-shadow:
+    0 8px 25px rgba(255, 9, 40, 0.12);
+}
+
+.primary-project-link:hover {
+  background: #d90722;
+
+  border-color: #d90722;
+
+  box-shadow:
+    0 12px 30px rgba(255, 9, 40, 0.22);
+}
+
+
+/* =========================================================
+   SECONDARY PROJECT BUTTON
+========================================================= */
+
+.secondary-project-link {
+  color: #aaaaaa;
+
+  background: transparent;
+
+  border: 1px solid #303030;
+}
+
+.secondary-project-link:hover {
+  color: #ffffff;
+
+  background: #181818;
+
+  border-color: #555555;
+}
+
+
+/* =========================================================
+   DISABLED / UNAVAILABLE REPOSITORY
+========================================================= */
+
+.project-link-disabled {
+  color: #666666;
+
+  background: #151515;
+
+  border: 1px solid #292929;
+
+  cursor: default;
+
+  opacity: 0.75;
+}
+
+.project-link-disabled:hover {
+  color: #666666;
+
+  background: #151515;
+
+  border-color: #292929;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   BOTTOM MESSAGE
+========================================================= */
+
+.projects-bottom {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 55px;
+
+  color: #555555;
+
+  font-family: "Inter", sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  text-align: center;
+}
+
+.projects-bottom-line {
+  width: 45px;
+  height: 1px;
+
+  background: #333333;
+}
+
+
+/* =========================================================
+   ANIMATION
+========================================================= */
+
+@keyframes projectRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .projects {
+    padding: 125px 0 115px;
+  }
+
+  .projects-heading {
+    gap: 35px;
+  }
+
+  .project-showcase {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .project-showcase-content {
+    padding: 38px 35px;
+  }
+
+  .project-code-window {
+    width: 175px;
+    height: 118px;
+  }
+
+  .project-orbit {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .projects {
+    padding: 110px 0 100px;
+  }
+
+  .projects-heading {
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+  }
+
+  .projects-heading p {
+    max-width: 480px;
+  }
+
+  .project-showcase {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
+  }
+
+  .project-visual {
+    min-height: 330px;
+
+    border-right: none;
+    border-bottom: 1px solid #252525;
+  }
+
+  .project-showcase-content {
+    padding: 35px;
+  }
+
+  .project-description {
+    max-width: 100%;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .projects {
+    padding: 90px 0 85px;
+  }
+
+  .projects-heading {
+    gap: 20px;
+
+    margin-bottom: 40px;
+  }
+
+  .projects-heading h2 {
+    font-size: 40px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .projects-heading p {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .projects-list {
+    gap: 16px;
+  }
+
+  .project-showcase {
+    border-radius: 18px;
+  }
+
+  .project-visual {
+    min-height: 280px;
+
+    padding: 22px;
+  }
+
+  .project-visual::before {
+    inset: 14px;
+
+    border-radius: 12px;
+  }
+
+  .project-visual-content {
+    inset: 55px 20px 50px;
+  }
+
+  .project-big-number {
+    font-size: 120px;
+  }
+
+  .project-orbit {
+    width: 150px;
+    height: 150px;
+  }
+
+  .project-orbit::before {
+    inset: 20px;
+  }
+
+  .project-code-window {
+    width: 160px;
+    height: 105px;
+
+    padding: 12px;
+  }
+
+  .project-visual-footer {
+    left: 22px;
+    right: 22px;
+    bottom: 20px;
+  }
+
+  .project-showcase-content {
+    padding: 28px 23px 30px;
+  }
+
+  .project-showcase-content h3 {
+    font-size: 32px;
+
+    letter-spacing: -1.5px;
+  }
+
+  .project-description {
+    margin-top: 18px;
+
+    font-size: 10px;
+    line-height: 1.75;
+  }
+
+  .project-technologies {
+    gap: 6px;
+
+    margin-top: 20px;
+  }
+
+  .project-technologies span {
+    padding: 6px 9px;
+
+    font-size: 7.5px;
+  }
+
+  .project-actions {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 25px;
+  }
+
+  .project-link {
+    width: 100%;
+
+    min-height: 40px;
+  }
+
+  .projects-bottom {
+    margin-top: 40px;
+
+    font-size: 7px;
+
+    line-height: 1.6;
+    letter-spacing: 1.5px;
+  }
+
+  .projects-bottom-line {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-orbit {
+    animation: none;
+  }
+
+  .project-showcase,
+  .project-code-window,
+  .project-link,
+  .project-technologies span {
+    transition: none;
+  }
+}

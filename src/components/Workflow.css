@@ -1,0 +1,857 @@
+/* =========================================================
+   WORKFLOW SECTION
+   ========================================================= */
+
+.workflow {
+  position: relative;
+
+  width: 100%;
+
+  padding: 145px 0 155px;
+
+  background: #ffffff;
+
+  color: #111111;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIVE CIRCLES
+   ========================================================= */
+
+.workflow::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  right: -280px;
+  top: 80px;
+
+  border: 1px solid rgba(255, 9, 40, 0.07);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.workflow::after {
+  content: "";
+
+  position: absolute;
+
+  width: 360px;
+  height: 360px;
+
+  left: -210px;
+  bottom: 20px;
+
+  border: 1px solid rgba(255, 9, 40, 0.05);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.workflow-container {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(1120px, 90%);
+
+  min-height: 700px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 0.82fr 1.18fr;
+
+  align-items: center;
+
+  gap: 45px;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.workflow-intro {
+  position: relative;
+
+  z-index: 5;
+
+  padding-right: 30px;
+}
+
+.workflow-label {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 7px 13px;
+
+  background: #f1f1f1;
+
+  border-radius: 30px;
+
+  color: #222222;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+
+  text-transform: uppercase;
+}
+
+.workflow-intro h2 {
+  margin-top: 22px;
+
+  color: #111111;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(43px, 5.3vw, 68px);
+
+  font-weight: 500;
+
+  line-height: 0.94;
+
+  letter-spacing: -4px;
+}
+
+.workflow-intro h2 strong {
+  font-weight: 800;
+}
+
+.workflow-intro p {
+  max-width: 350px;
+
+  margin-top: 25px;
+
+  color: #777777;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   WORKFLOW STAGE
+   ========================================================= */
+
+.workflow-stage {
+  position: relative;
+
+  width: 100%;
+
+  height: 690px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CURVED PATH
+   ========================================================= */
+
+.workflow-path {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
+
+  pointer-events: none;
+
+  z-index: 0;
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   WORKFLOW CARDS
+   ========================================================= */
+
+.workflow-card {
+  position: absolute;
+
+  width: 205px;
+
+  min-height: 166px;
+
+  padding: 19px 20px;
+
+  background: #fafafa;
+
+  border: 1px solid rgba(0, 0, 0, 0.045);
+
+  border-radius: 14px;
+
+  color: #111111;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.045);
+
+  overflow: visible;
+
+  z-index: 3;
+
+  transform-origin: center center;
+
+  will-change: transform, background, box-shadow;
+
+  transition:
+    background 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.55s ease,
+    color 0.55s ease,
+    box-shadow 0.55s ease,
+    filter 0.55s ease;
+}
+
+
+/* =========================================================
+   CARD POSITIONS
+   ========================================================= */
+
+.workflow-card-1 {
+  top: 20px;
+
+  right: 10px;
+  left: auto;
+
+  transform: rotate(3deg);
+}
+
+.workflow-card-2 {
+  top: 190px;
+
+  left: 20px;
+  right: auto;
+
+  transform: rotate(-3deg);
+}
+
+.workflow-card-3 {
+  top: 360px;
+
+  right: 55px;
+  left: auto;
+
+  transform: rotate(3deg);
+}
+
+.workflow-card-4 {
+  top: 530px;
+
+  left: 75px;
+  right: auto;
+
+  transform: rotate(-3deg);
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.workflow-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.workflow-number {
+  color: #999999;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  transition:
+    color 0.45s ease;
+}
+
+.workflow-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #d4d4d4;
+
+  transition:
+    background 0.45s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s ease;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.workflow-card h3 {
+  margin: 0 0 10px;
+
+  color: #111111;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  line-height: 1;
+
+  letter-spacing: -0.4px;
+
+  transition:
+    color 0.45s ease;
+}
+
+.workflow-card p {
+  max-width: 170px;
+
+  margin: 0;
+
+  color: #777777;
+
+  font-family: "Inter", sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.6;
+
+  transition:
+    color 0.45s ease;
+}
+
+
+/* =========================================================
+   ACTIVE CARD
+   PLAN → BUILD → DEPLOY → MONITOR
+   ========================================================= */
+
+.workflow-card.is-active {
+  background: #ff0928;
+
+  border-color: #ff0928;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 45px rgba(255, 9, 40, 0.28),
+    0 0 35px rgba(255, 9, 40, 0.12);
+
+  filter: saturate(1.05);
+
+  z-index: 20;
+}
+
+
+/* =========================================================
+   ACTIVE NUMBER
+   ========================================================= */
+
+.workflow-card.is-active .workflow-number {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   ACTIVE DOT
+   ========================================================= */
+
+.workflow-card.is-active .workflow-dot {
+  background: #ffffff;
+
+  transform: scale(1.35);
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.16);
+}
+
+
+/* =========================================================
+   ACTIVE TITLE
+   ========================================================= */
+
+.workflow-card.is-active h3 {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ACTIVE DESCRIPTION
+   ========================================================= */
+
+.workflow-card.is-active p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+
+/* =========================================================
+   ACTIVE CARD PULSE
+   ========================================================= */
+
+.workflow-card.is-active::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -7px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(255, 9, 40, 0.25);
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  animation:
+    workflow-active-pulse 1.7s ease-in-out infinite;
+}
+
+@keyframes workflow-active-pulse {
+
+  0% {
+    opacity: 0;
+
+    transform: scale(0.96);
+  }
+
+  35% {
+    opacity: 0.7;
+
+    transform: scale(1);
+  }
+
+  65% {
+    opacity: 0.25;
+
+    transform: scale(1.025);
+  }
+
+  100% {
+    opacity: 0;
+
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   ACTIVE CARD SMALL FLOAT
+   ========================================================= */
+
+.workflow-card.is-active {
+  animation:
+    workflow-active-float 1.7s ease-in-out infinite;
+}
+
+@keyframes workflow-active-float {
+
+  0% {
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: -4px;
+  }
+
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.workflow-card:hover {
+  background: #ff0928;
+
+  border-color: #ff0928;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 20px 45px rgba(255, 9, 40, 0.25),
+    0 0 30px rgba(255, 9, 40, 0.1);
+
+  z-index: 25;
+}
+
+.workflow-card:hover .workflow-number {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.workflow-card:hover .workflow-dot {
+  background: #ffffff;
+
+  transform: scale(1.3);
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+.workflow-card:hover h3 {
+  color: #ffffff;
+}
+
+.workflow-card:hover p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+
+/* =========================================================
+   END TEXT
+   ========================================================= */
+
+.workflow-end-text {
+  position: absolute;
+
+  right: 0;
+  bottom: 5px;
+
+  color: #999999;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2px;
+
+  transform: rotate(-3deg);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .workflow-container {
+    grid-template-columns: 0.75fr 1.25fr;
+
+    gap: 20px;
+  }
+
+  .workflow-intro {
+    padding-right: 10px;
+  }
+
+  .workflow-intro h2 {
+    font-size: clamp(40px, 5vw, 58px);
+
+    letter-spacing: -3px;
+  }
+
+  .workflow-stage {
+    height: 680px;
+  }
+
+  .workflow-card {
+    width: 185px;
+
+    min-height: 158px;
+  }
+
+  .workflow-card-1 {
+    right: 0;
+  }
+
+  .workflow-card-2 {
+    left: 0;
+  }
+
+  .workflow-card-3 {
+    right: 10px;
+  }
+
+  .workflow-card-4 {
+    left: 45px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+  .workflow {
+    padding: 110px 0 105px;
+  }
+
+  .workflow-container {
+    width: min(620px, 90%);
+
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+
+    min-height: auto;
+  }
+
+  .workflow-intro {
+    padding-right: 0;
+
+    max-width: 520px;
+  }
+
+  .workflow-intro h2 {
+    font-size: clamp(42px, 10vw, 60px);
+
+    letter-spacing: -3px;
+  }
+
+  .workflow-intro p {
+    max-width: 430px;
+  }
+
+  .workflow-stage {
+    height: 760px;
+  }
+
+  .workflow-card {
+    width: 195px;
+
+    min-height: 165px;
+  }
+
+  .workflow-card-1 {
+    top: 0;
+
+    right: 0;
+    left: auto;
+  }
+
+  .workflow-card-2 {
+    top: 190px;
+
+    left: 0;
+    right: auto;
+  }
+
+  .workflow-card-3 {
+    top: 380px;
+
+    right: 0;
+    left: auto;
+  }
+
+  .workflow-card-4 {
+    top: 570px;
+
+    left: 35px;
+    right: auto;
+  }
+
+  .workflow-path {
+    opacity: 0.65;
+  }
+
+  .workflow-end-text {
+    right: 0;
+
+    bottom: -25px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 500px) {
+
+  .workflow {
+    padding: 90px 0 105px;
+  }
+
+  .workflow-container {
+    width: 88%;
+
+    gap: 42px;
+  }
+
+  .workflow-intro h2 {
+    font-size: 39px;
+
+    line-height: 0.96;
+
+    letter-spacing: -2.5px;
+  }
+
+  .workflow-intro p {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .workflow-stage {
+    height: 750px;
+  }
+
+  .workflow-card {
+    width: 175px;
+
+    min-height: 153px;
+
+    padding: 17px;
+  }
+
+  .workflow-card-1 {
+    top: 0;
+
+    right: -4px;
+  }
+
+  .workflow-card-2 {
+    top: 185px;
+
+    left: -4px;
+  }
+
+  .workflow-card-3 {
+    top: 370px;
+
+    right: -4px;
+  }
+
+  .workflow-card-4 {
+    top: 555px;
+
+    left: 5px;
+  }
+
+  .workflow-card-top {
+    margin-bottom: 19px;
+  }
+
+  .workflow-card h3 {
+    font-size: 15px;
+  }
+
+  .workflow-card p {
+    max-width: 145px;
+
+    font-size: 8.5px;
+
+    line-height: 1.55;
+  }
+
+  .workflow-number {
+    font-size: 8px;
+  }
+
+  .workflow-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .workflow-end-text {
+    font-size: 10px;
+
+    bottom: -30px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+  .workflow-container {
+    width: 90%;
+  }
+
+  .workflow-intro h2 {
+    font-size: 35px;
+  }
+
+  .workflow-card {
+    width: 165px;
+
+    min-height: 150px;
+  }
+
+  .workflow-card-1 {
+    right: 0;
+  }
+
+  .workflow-card-2 {
+    left: 0;
+  }
+
+  .workflow-card-3 {
+    right: 0;
+  }
+
+  .workflow-card-4 {
+    left: 0;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .workflow-card,
+  .workflow-card::after,
+  .workflow-dot,
+  .workflow-number,
+  .workflow-card h3,
+  .workflow-card p {
+    transition: none;
+
+    animation: none;
+  }
+}
