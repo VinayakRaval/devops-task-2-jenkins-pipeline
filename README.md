@@ -1,387 +1,334 @@
-Vinayak Raval — DevOps Portfolio
+# DevOps Task 2 — Jenkins CI/CD Pipeline with Docker
 
-A modern, responsive personal portfolio website for Vinayak Raval, a Computer Science Engineering student and aspiring DevOps Engineer.
+## Project Overview
 
-The portfolio showcases DevOps and cloud skills, hands-on projects, learning journey, workflow, and contact information using a modern black, white, and red visual design.
+This project implements a simple CI/CD pipeline for a React/Vite portfolio application using **GitHub, Jenkins, Docker, and AWS EC2**.
 
-Live Portfolio
+The pipeline:
+1. Checks out source code from GitHub.
+2. Builds the application as a Docker image.
+3. Tests the Dockerized application.
+4. Deploys the application as a Docker container on AWS EC2.
 
-Add your deployed portfolio URL here:
+## Task Objective
 
-https://your-domain.com
+**DevOps Internship — Task 2: Create a Simple Jenkins Pipeline for CI/CD**
 
-About
+The task requires Jenkins and Docker, a Jenkinsfile, Build/Test/Deploy stages, a commit-triggered pipeline, and a GitHub submission.
 
-This portfolio is built to present my technical journey, projects, and practical learning in:
+## Technology Stack
 
-Cloud Computing
+| Technology | Purpose |
+|---|---|
+| AWS EC2 | Cloud server / deployment environment |
+| Ubuntu | EC2 operating system |
+| Jenkins | CI/CD automation |
+| Docker | Application containerization |
+| Git | Version control |
+| GitHub | Source-code repository |
+| React + Vite | Portfolio application |
+| Nginx | Production web server |
 
-DevOps
+## CI/CD Architecture
 
-CI/CD
-
-Containerization
-
-Kubernetes
-
-Linux
-
-Infrastructure Automation
-
-Monitoring
-
-Full-Stack Development
-
-I am currently focused on developing practical skills through academic, personal, and hands-on projects.
-
-Features
-
-Modern responsive portfolio design
-
-Animated sections using Framer Motion
-
-Responsive navigation with mobile menu
-
-Hero section with profile image
-
-About section with animated profile card
-
-Technical skills section with skill indicators
-
-Project showcase section
-
-DevOps workflow animation
-
-Education and learning journey
-
-Soft skills section
-
-Currently learning section
-
-Contact form UI
-
-GitHub and LinkedIn links
-
-Resume download
-
-Responsive design for desktop, tablet, and mobile
-
-Reduced-motion support for accessibility
-
-Tech Stack
-
-Frontend
-
-React
-
-Vite
-
-JavaScript
-
-HTML5
-
-CSS3
-
-UI & Animation
-
-Framer Motion
-
-Lucide React
-
-Development Tools
-
-Visual Studio Code
-
-Git
-
+```text
+Developer
+   |
+   | git push
+   v
 GitHub
+   |
+   v
+Jenkins on AWS EC2
+   |
+   +--> Checkout
+   |
+   +--> Build
+   |      |
+   |      +--> Docker image
+   |
+   +--> Test
+   |      |
+   |      +--> Temporary container
+   |
+   +--> Deploy
+          |
+          +--> Docker container :8081
+                    |
+                    v
+              Portfolio Website
+```
 
-npm
+## Project Structure
 
-DevOps / Cloud Technologies
-
-AWS
-
-Docker
-
-Kubernetes
-
-Jenkins
-
-Terraform
-
-Linux
-
-GitHub
-
-CI/CD
-
-Prometheus
-
-Grafana
-
-Project Structure
-
-vinayak-portfolio/
-│
+```text
+devops-task-2-jenkins-pipeline/
 ├── public/
-│   ├── images/
-│   │   ├── profile.png
-│   │   ├── form2feature.png
-│   │   ├── ehr.png
-│   │   └── devops.png
-│   │
-│   └── resume.pdf
-│
 ├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Navbar.css
-│   │   ├── SideSocial.jsx
-│   │   ├── SideSocial.css
-│   │   ├── Hero.jsx
-│   │   ├── Hero.css
-│   │   ├── About.jsx
-│   │   ├── About.css
-│   │   ├── Skills.jsx
-│   │   ├── Skills.css
-│   │   ├── Projects.jsx
-│   │   ├── Projects.css
-│   │   ├── Experience.jsx
-│   │   ├── Experience.css
-│   │   ├── Workflow.jsx
-│   │   ├── Workflow.css
-│   │   ├── Leadership.jsx
-│   │   ├── Leadership.css
-│   │   ├── SoftSkills.jsx
-│   │   ├── SoftSkills.css
-│   │   ├── Certifications.jsx
-│   │   ├── Certifications.css
-│   │   ├── Contact.jsx
-│   │   ├── Contact.css
-│   │   ├── Footer.jsx
-│   │   └── Footer.css
-│   │
-│   ├── data/
-│   │   └── portfolioData.js
-│   │
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── global.css
-│
+├── .dockerignore
+├── .gitignore
+├── Dockerfile
+├── Jenkinsfile
+├── README.md
 ├── index.html
 ├── package.json
-├── vite.config.js
-└── README.md
+├── package-lock.json
+└── vite.config.js
+```
 
-Installation
+## Dockerfile
 
-1. Clone the repository
+The Dockerfile uses a multi-stage build:
 
-git clone https://github.com/VinayakRaval/your-portfolio-repository.git
-
-2. Enter the project directory
-
-cd your-portfolio-repository
-
-3. Install dependencies
-
-npm install
-
-4. Start the development server
-
-npm run dev
-
-The application will normally be available at:
-
-http://localhost:5173
-
-Build for Production
-
-Create a production build:
-
-npm run build
-
-Preview the production build locally:
-
-npm run preview
-
-Contact Form
-
-The current contact form performs frontend validation and displays a submission confirmation.
-
-For actual message delivery, connect the form to one of the following:
-
-Web3Forms
-
-Formspree
-
-EmailJS
-
-Node.js + Express backend
-
-A custom backend with a database
-
-The current frontend does not claim that an email has been sent until a real backend or form service is connected.
-
-Deployment
-
-This Vite React application can be deployed using services such as:
-
-Vercel
-
-Netlify
-
-GitHub Pages
-
-AWS S3 + CloudFront
-
-AWS EC2 with Nginx
-
-Example production build:
-
-npm run build
-
-The generated files will be placed in:
-
-dist/
-
-Personal Links
-
-GitHub
-
-https://github.com/VinayakRaval
-
-LinkedIn
-
-https://www.linkedin.com/in/vinayak-raval-4304a0333
-
-Email
-
-ravalvinayaka832@gmail.com
-
-Projects
-
-Form2Feature
-
-A farmer marketplace platform designed to connect farmers with buyers while providing agricultural information and useful market-related features.
-
-Technologies:
-
-React
-
+```text
 Node.js
+   |
+npm ci
+   |
+npm run build
+   |
+dist/
+   |
+Nginx Alpine
+   |
+Production container
+```
 
-MySQL
+The application is served on container port `80`.
 
-AWS
+## Jenkins Pipeline
 
-Docker
+### Checkout
+Jenkins retrieves the latest source code from GitHub.
 
-Docker CI/CD Pipeline
+### Build
+Builds the Docker image:
 
-A hands-on DevOps project demonstrating an automated application build and deployment workflow.
+```bash
+docker build -t devops-task-2-jenkins-pipeline:latest .
+```
 
-Technologies:
+### Test
+Starts a temporary container on port `8082` and verifies the application:
 
-GitHub
+```bash
+curl -f http://localhost:8082
+```
 
+### Deploy
+Replaces the old container and starts the new version:
+
+```bash
+docker rm -f devops-task-2-app || true
+
+docker run -d   --name devops-task-2-app   -p 8081:80   devops-task-2-jenkins-pipeline:latest
+```
+
+The deployed application is available at:
+
+```text
+http://EC2_PUBLIC_IP:8081
+```
+
+## Jenkins Configuration
+
+This implementation can use:
+
+```text
+Definition: Pipeline script
+```
+
+The pipeline script can be pasted directly into the Jenkins Pipeline job.
+
+The repository also contains `Jenkinsfile` as the pipeline-file deliverable.
+
+## AWS EC2 Setup
+
+The EC2 server should have:
+
+```text
+Ubuntu
+Java 21
 Jenkins
-
 Docker
+Git
+```
 
-Docker Hub
+Useful checks:
 
-Linux
+```bash
+java -version
+docker --version
+git --version
+sudo systemctl status jenkins
+sudo -u jenkins docker ps
+```
 
-Kubernetes Deployment
+## Automatic Trigger
 
-A containerized application deployment project using Kubernetes and Docker.
+Configure Jenkins:
 
-Technologies:
+```text
+Job
+ -> Configure
+ -> Build Triggers
+ -> Poll SCM
+```
 
-Kubernetes
+Example schedule:
 
-Docker
+```text
+H/5 * * * *
+```
 
-AWS
+After a GitHub commit is detected, Jenkins starts a new build.
 
-Linux
+## Local Testing
 
-kubectl
+Install dependencies:
 
-EHR Application
+```bash
+npm install
+```
 
-An Electronic Health Record application developed with authentication, backend services, and database integration.
+Build:
 
-Technologies:
+```bash
+npm run build
+```
 
-React
+Run with Docker:
 
-PHP
+```bash
+docker build -t devops-task-2-jenkins-pipeline .
+docker run -d --name devops-task-2-app -p 8081:80 devops-task-2-jenkins-pipeline
+```
 
-MySQL
+Open:
 
-Docker
+```text
+http://localhost:8081
+```
 
-Learning Journey
+## Evidence / Screenshots
 
-The portfolio represents an ongoing learning journey in:
+Place the real screenshots in the `screenshots/` directory.
 
-Linux
-  ↓
-Git & GitHub
-  ↓
-Docker
-  ↓
-Jenkins & CI/CD
-  ↓
-AWS
-  ↓
-Kubernetes
-  ↓
-Terraform
-  ↓
-Monitoring
-  ↓
-DevOps Practices
+### AWS EC2
 
-Future Improvements
+![AWS EC2](screenshots/01-aws-ec2.png)
 
-Planned improvements include:
+Show the running EC2 instance.
 
-Connect the contact form to a real backend
+### Jenkins Pipeline
 
-Add email notifications
+![Jenkins Pipeline](screenshots/02-jenkins-pipeline.png)
 
-Add an admin dashboard for contact messages
+Show successful Checkout/Build/Test/Deploy stages.
 
-Add more verified certifications as they are completed
+### Jenkins Console
 
-Add more DevOps and cloud projects
+![Jenkins Console](screenshots/03-jenkins-console.png)
 
-Improve accessibility
+Show the successful console output, including `Finished: SUCCESS`.
 
-Add automated deployment through CI/CD
+### Docker Container
 
-Deploy the portfolio using AWS or another cloud platform
+![Docker Container](screenshots/04-docker-container.png)
 
-Author
+Show:
 
-Vinayak Raval
+```bash
+docker ps
+```
 
-Computer Science Engineering Student
-Aspiring DevOps Engineer
-Karnataka, India
+with the deployed application container.
 
-GitHub: https://github.com/VinayakRaval
+### Deployed Portfolio
 
-LinkedIn: https://www.linkedin.com/in/vinayak-raval-4304a0333
+![Deployed Portfolio](screenshots/05-deployed-portfolio.png)
 
-Email: ravalvinayaka832@gmail.com
+Show the portfolio at:
 
-License
+```text
+http://EC2_PUBLIC_IP:8081
+```
 
-This project is intended as a personal portfolio project.
+### GitHub Repository
 
-You may use the structure and ideas for learning, but please replace personal information, images, links, and content with your own when creating your own portfolio.
+![GitHub Repository](screenshots/06-github-repository.png)
+
+Show the GitHub repository containing the project files.
+
+### Automatic Trigger
+
+![Automatic Trigger](screenshots/07-automatic-trigger.png)
+
+Show a Jenkins build created after a GitHub commit.
+
+> **Important:** The image files included in this package are placeholders. Replace them with your own actual screenshots. Do not submit placeholder images as evidence.
+
+## Testing Checklist
+
+- [ ] EC2 instance running
+- [ ] Jenkins running
+- [ ] Docker running
+- [ ] Jenkins can execute Docker
+- [ ] GitHub repository configured
+- [ ] Checkout succeeds
+- [ ] Build succeeds
+- [ ] Test succeeds
+- [ ] Deploy succeeds
+- [ ] Portfolio accessible on port 8081
+- [ ] Commit triggers a new Jenkins build
+- [ ] Real screenshots added
+- [ ] README updated
+- [ ] GitHub repository link ready for submission
+
+## Interview Questions
+
+### 1. What is Jenkins and how is it used in CI/CD?
+Jenkins is an automation server used to automate software build, testing, and deployment tasks.
+
+### 2. What is a Jenkinsfile?
+A Jenkinsfile is a text file that defines a Jenkins Pipeline as code.
+
+### 3. How do you create and configure Jenkins pipelines?
+Create a Pipeline job, configure the source repository or pipeline script, define the stages, and configure a suitable trigger.
+
+### 4. What are common Jenkins pipeline stages?
+Common stages include:
+
+```text
+Checkout
+Build
+Test
+Deploy
+```
+
+### 5. Declarative vs Scripted Jenkins Pipeline
+A Declarative Pipeline uses a structured `pipeline {}` syntax for common CI/CD workflows. A Scripted Pipeline uses Groovy-based scripting and offers more programming flexibility.
+
+## Result
+
+The project demonstrates a CI/CD workflow where GitHub stores the source code, Jenkins automates the pipeline, Docker packages the application, and AWS EC2 hosts the Jenkins/Docker deployment environment.
+
+## Submission
+
+GitHub Repository:
+
+```text
+PASTE-YOUR-GITHUB-REPOSITORY-LINK-HERE
+```
+
+Application:
+
+```text
+http://EC2_PUBLIC_IP:8081
+```
+
+Jenkins:
+
+```text
+http://EC2_PUBLIC_IP:8080
+```
